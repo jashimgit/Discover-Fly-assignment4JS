@@ -1,3 +1,38 @@
+//  testing code 
+
+function updatePrice(isIncrease) {
+
+    var firstClassInputBtn = parseInt(document.getElementById('firstclass-count').value);
+
+    let ticketIncreasedValue;
+
+    if (isIncrease == true) {
+        ticketIncreasedValue = firstClassInputBtn + 1;
+    }
+    if (isIncrease == false) {
+        if (firstClassInputBtn <= 0) {
+            document.getElementById('firstclass-count').value = 0;
+            ticketIncreasedValue = 0;
+        } else {
+
+            ticketIncreasedValue = firstClassInputBtn - 1;
+        }
+    }
+    let newTicketCount = document.getElementById('firstclass-count').value = ticketIncreasedValue;
+
+    let ticketPrice = newTicketCount * 150;
+
+    totalPrice()
+}
+
+
+
+
+
+
+
+// Working code 
+
 function updatePrice(isIncrease) {
 
     var firstClassInputBtn = parseInt(document.getElementById('firstclass-count').value);
@@ -27,7 +62,7 @@ function updatePrice(isIncrease) {
 
 function updateEconomyPrice(isIncrease) {
 
-    var ecoClassInput = parseInt(document.getElementById('echo-class-input').value)
+    var ecoClassInput = parseInt(document.getElementById('echoClass-count').value)
 
     let ticketIncresedInput = 0;
 
@@ -36,14 +71,14 @@ function updateEconomyPrice(isIncrease) {
     }
     if (isIncrease == false) {
         if (ecoClassInput <= 0) {
-            document.getElementById('echo-class-input').value = 0;
+            document.getElementById('echoClass-count').value = 0;
             ticketIncresedInput = 0;
         } else {
             ticketIncresedInput = ecoClassInput - 1;
         }
     }
 
-    let newTicketCount = document.getElementById('echo-class-input').value = ticketIncresedInput;
+    let newTicketCount = document.getElementById('echoClass-count').value = ticketIncresedInput;
 
     let ticketIncreasedValue = newTicketCount * 100;
 
@@ -57,7 +92,7 @@ function totalPrice() {
     var firstclassCount = document.getElementById('firstclass-count');
     var firstClassInput = parseInt(firstclassCount.value);
 
-    var economoyTicketCount = document.getElementById('echo-class-input');
+    var economoyTicketCount = document.getElementById('echoClass-count');
     var economyInput = parseInt(economoyTicketCount.value);
     firstClassInput + economyInput;
     var totalPrice = firstClassInput * 150 + economyInput * 100;
@@ -84,3 +119,4 @@ function bookNow() {
         alert('Sorry!! You did not selected any ticket yet');
     }
 }
+
