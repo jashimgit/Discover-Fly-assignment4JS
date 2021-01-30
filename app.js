@@ -112,9 +112,12 @@ function totalPrice() {
 // submit booking
 
 function bookNow() {
+    var totalFirstClassTicket = parseInt(document.getElementById('firstclass-count').value);
+    var totalEconomoTicket = parseInt(document.getElementById('echoClass-count').value);
+    let totalTicket = totalFirstClassTicket + totalEconomoTicket;
     var totalPrice = parseInt(document.getElementById('total-price').innerText);
     if (totalPrice > 0) {
-        alert('congrats! your Ticket booked')
+        alert(`congrats, you have booked ${totalFirstClassTicket} First Class ticket and ${totalEconomoTicket} Economoy Class ticket and total price is $${totalPrice}`)
     } else {
         alert('Sorry!! You did not selected any ticket yet');
     }
