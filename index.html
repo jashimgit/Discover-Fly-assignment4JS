@@ -55,11 +55,11 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="fclass-input-box" class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="firstclass-count" class="inp-style inp-width" type="number" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button id="fclass-increase-btn" onclick="updatePrice(true)"><i class=" fa fa-plus"></i></button>
-                    <button id="fclass-decrease-btn" onclick="updatePrice(false)"><i class=" fa fa-minus"></i></button>
+                    <button onclick="updatePrice(true)"><i class=" fa fa-plus"></i></button>
+                    <button onclick="updatePrice(false)"><i class=" fa fa-minus"></i></button>
                 </div>
             </div>
 
@@ -69,8 +69,8 @@
                     <input id="echo-class-input" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <button id="eco-class-plus-btn" onclick="updateEconomyPrice(true)"><i class=" fa fa-plus"></i></button>
-                    <button id="eco-class-minus-btn" onclick="updateEconomyPrice(false)"><i class=" fa fa-minus"></i></button>
+                    <button onclick="updateEconomyPrice(true)"><i class=" fa fa-plus"></i></button>
+                    <button onclick="updateEconomyPrice(false)"><i class=" fa fa-minus"></i></button>
                 </div>
             </div>
             <div class="calculations">
@@ -79,7 +79,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$ <span id="sub-total">500</span> </p>
+                        <p>$ <span id="sub-total">0</span> </p>
                     </div>
                 </div>
 
