@@ -1,17 +1,8 @@
-// get first class tiket increase button 
-document.getElementById('fclass-increase-btn').addEventListener('click', function () {
-    updatePrice(true)
-});
-
-document.getElementById('fclass-decrease-btn').addEventListener('click', function () {
-    updatePrice(false)
-})
 
 function updatePrice(isIncrease) {
 
     var firstClassInputBtn = parseInt(document.getElementById('fclass-input-box').value);
-    // console.log(typeof firstClassInputBtn);
-    // new tiket value after incrase by 1 
+
     let ticketIncreasedValue = 0;
 
     if (isIncrease == true) {
@@ -34,28 +25,29 @@ function updatePrice(isIncrease) {
 }
 
 
-// economy class plus button
-document.getElementById('eco-class-plus-btn').addEventListener('click', function () {
+
+function updateEconomyPrice(isIncrease) {
     // get input box value
     var ecoClassInput = parseInt(document.getElementById('echo-class-input').value)
-    // new ticket value after increase by 1
-    ticketIncresedValue = ecoClassInput + 1;
 
-    let newTicketCount = document.getElementById('echo-class-input').value = ticketIncresedValue;
+    let ticketIncresedInput = 0;
+
+    if (isIncrease == true) {
+        ticketIncresedInput = ecoClassInput + 1;
+    }
+    if (isIncrease == false) {
+        if (ecoClassInput <= 0) {
+            document.getElementById('echo-class-input').value = 0;
+            ticketIncresedInput = 0;
+        } else {
+            ticketIncresedInput = ecoClassInput - 1;
+        }
+    }
+
+    let newTicketCount = document.getElementById('echo-class-input').value = ticketIncresedInput;
     // count total ticket price
-    let ticketAfterDscValue = newTicketCount * 100;
-    // console.log(ticketDcresedValue, ticketAfterDscValue);
-})
+    let ticketIncreasedValue = newTicketCount * 100;
+    console.log(newTicketCount, ticketIncreasedValue);
+}
 
-document.getElementById('eco-class-minus-btn').addEventListener('click', function () {
-    // get input box value
-    var echoClassInput = document.getElementById('echo-class-input').value;
-    // new ticket value after decrease by 1 
-    let ticketDcresedValue = echoClassInput - 1;
-    let newTicketCount = document.getElementById('echo-class-input').value = ticketDcresedValue;
-    // count total ticket price
-    let newTicketValue = newTicketCount * 100;
-})
-
-// calculate grand total 
 
