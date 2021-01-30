@@ -1,9 +1,11 @@
-//  testing code 
+// handle product change function for each product
+
 function handleProductChange(product, isIncrease) {
     // get input value
     const productInput = document.getElementById(product + '-count');
     const productCount = parseInt(productInput.value);
     let productNewCount = productCount;
+
     if (isIncrease == true) {
         productNewCount = productCount + 1;
     }
@@ -25,7 +27,7 @@ function handleProductChange(product, isIncrease) {
 
 
 
-// // calculate total Price
+// calculate total Price
 
 function totalPrice() {
 
@@ -35,7 +37,6 @@ function totalPrice() {
     var economoyTicketCount = document.getElementById('echoclass-count');
     var economyInput = parseInt(economoyTicketCount.value);
 
-    // firstClassInput + economyInput;
     var totalPrice = firstClassInput * 150 + economyInput * 100;
 
     document.getElementById('sub-total').innerText = totalPrice;
@@ -45,7 +46,7 @@ function totalPrice() {
     let totalVat = totalPrice * 0.1;
     document.getElementById('vat').innerText = totalVat;
 
-    // grand total
+    // print grand total to view page
 
     document.getElementById('total-price').innerText = totalPrice + totalVat;
 }
