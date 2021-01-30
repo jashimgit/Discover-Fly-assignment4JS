@@ -16,18 +16,17 @@ function updatePrice(isIncrease) {
             ticketIncreasedValue = firstClassInputBtn - 1;
         }
     }
-    // console.log(ticketIncreasedValue);
     let newTicketCount = document.getElementById('firstclass-count').value = ticketIncreasedValue;
-    // count total ticket price
+
     let ticketPrice = newTicketCount * 150;
-    // console.log(ticketIncreasedValue, ticketPrice);
+
     totalPrice()
 }
 
 
 
 function updateEconomyPrice(isIncrease) {
-    // get input box value
+
     var ecoClassInput = parseInt(document.getElementById('echo-class-input').value)
 
     let ticketIncresedInput = 0;
@@ -45,34 +44,43 @@ function updateEconomyPrice(isIncrease) {
     }
 
     let newTicketCount = document.getElementById('echo-class-input').value = ticketIncresedInput;
-    // count total ticket price
+
     let ticketIncreasedValue = newTicketCount * 100;
-    // console.log(newTicketCount, ticketIncreasedValue);
+
     totalPrice()
 }
 
-// calculate total 
+// calculate total Price
 
 function totalPrice() {
 
     var firstclassCount = document.getElementById('firstclass-count');
     var firstClassInput = parseInt(firstclassCount.value);
-    // economoy class ticket 
+
     var economoyTicketCount = document.getElementById('echo-class-input');
     var economyInput = parseInt(economoyTicketCount.value);
     firstClassInput + economyInput;
     var totalPrice = firstClassInput * 150 + economyInput * 100;
-    // console.log(totalPrice);
+
     document.getElementById('sub-total').innerText = totalPrice;
 
     // calculate vat 
     let vat = parseInt(document.getElementById('vat').innerText);
-    // vat = parseInt(vat.value);
     let totalVat = totalPrice * 0.1;
-    // console.log(totalVat);
     document.getElementById('vat').innerText = totalVat
 
     // grand total 
 
     document.getElementById('total-price').innerText = totalPrice + totalVat;
+}
+
+// submit booking
+
+function bookNow() {
+    var totalPrice = parseInt(document.getElementById('total-price').innerText);
+    if (totalPrice > 0) {
+        alert('congrats! your Ticket booked')
+    } else {
+        alert('Sorry!! You did not selected any ticket yet');
+    }
 }
