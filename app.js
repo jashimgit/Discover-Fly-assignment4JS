@@ -64,4 +64,15 @@ function totalPrice() {
     var totalPrice = firstClassInput * 150 + economyInput * 100;
     // console.log(totalPrice);
     document.getElementById('sub-total').innerText = totalPrice;
+
+    // calculate vat 
+    let vat = parseInt(document.getElementById('vat').innerText);
+    // vat = parseInt(vat.value);
+    let totalVat = totalPrice * 0.1;
+    // console.log(totalVat);
+    document.getElementById('vat').innerText = totalVat
+
+    // grand total 
+
+    document.getElementById('total-price').innerText = totalPrice + totalVat;
 }
